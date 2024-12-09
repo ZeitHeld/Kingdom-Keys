@@ -9,7 +9,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import online.kingdomkeys.kingdomkeys.capability.IPlayerCapabilities;
 import online.kingdomkeys.kingdomkeys.capability.ModCapabilities;
-import online.kingdomkeys.kingdomkeys.damagesource.DarknessDamageSource;
+import online.kingdomkeys.kingdomkeys.damagesource.KKDamageTypes;
 import online.kingdomkeys.kingdomkeys.util.Utils;
 
 import java.util.List;
@@ -41,7 +41,7 @@ public class AxeSwordItem extends OrgSwordItem implements IOrgWeapon {
 				for(LivingEntity e : targetList) {
 					dmg *= player.fallDistance + 2;
 					System.out.println("Falling Strike: "+ dmg);
-					e.hurt(DarknessDamageSource.getDarknessDamage(e, player), dmg);
+					e.hurt(KKDamageTypes.getElementalDamage(KKDamageTypes.DARKNESS, e, player), dmg);
 
 					world.explode(player,player.getX(), player.getY(),player.getZ(),3,false, Level.ExplosionInteraction.NONE);
 					player.swing(hand);

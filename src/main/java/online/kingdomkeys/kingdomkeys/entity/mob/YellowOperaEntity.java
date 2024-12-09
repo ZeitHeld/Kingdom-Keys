@@ -17,7 +17,7 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.network.PlayMessages;
 import online.kingdomkeys.kingdomkeys.KingdomKeys;
-import online.kingdomkeys.kingdomkeys.damagesource.LightningDamageSource;
+import online.kingdomkeys.kingdomkeys.damagesource.KKDamageTypes;
 import online.kingdomkeys.kingdomkeys.entity.EntityHelper;
 import online.kingdomkeys.kingdomkeys.entity.ModEntities;
 import online.kingdomkeys.kingdomkeys.item.KKResistanceType;
@@ -175,7 +175,7 @@ public class YellowOperaEntity extends BaseElementalMusicalHeartlessEntity {
                             LightningBolt lightningboltentity = EntityType.LIGHTNING_BOLT.create(level());
                             lightningboltentity.moveTo(target.position());
                             level().addFreshEntity(lightningboltentity);
-                            this.mob.doHurtTarget(target);
+                            target.hurt(KKDamageTypes.getElementalDamage(KKDamageTypes.LIGHTNING, lightningboltentity, this.mob), (float)this.mob.getAttributeValue(Attributes.ATTACK_DAMAGE));
                         }
                         if(whileAttackTimer > 50) {
                             shotChargeTimer = 50;

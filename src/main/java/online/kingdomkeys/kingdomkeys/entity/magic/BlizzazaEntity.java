@@ -8,7 +8,6 @@ import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.protocol.Packet;
 import net.minecraft.network.protocol.game.ClientGamePacketListener;
 import net.minecraft.server.level.ServerLevel;
-import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
@@ -24,7 +23,7 @@ import net.minecraftforge.network.NetworkHooks;
 import net.minecraftforge.network.PlayMessages;
 import online.kingdomkeys.kingdomkeys.capability.ModCapabilities;
 import online.kingdomkeys.kingdomkeys.config.ModConfigs;
-import online.kingdomkeys.kingdomkeys.damagesource.IceDamageSource;
+import online.kingdomkeys.kingdomkeys.damagesource.KKDamageTypes;
 import online.kingdomkeys.kingdomkeys.entity.ModEntities;
 import online.kingdomkeys.kingdomkeys.lib.DamageCalculation;
 import online.kingdomkeys.kingdomkeys.lib.Party;
@@ -113,7 +112,7 @@ public class BlizzazaEntity extends ThrowableProjectile {
                     }
                     if (p == null || (p.getMember(target.getUUID()) == null || p.getFriendlyFire())) { // If caster is not in a party || the party doesn't have the target in it || the party has FF on
                         float dmg = this.getOwner() instanceof Player ? DamageCalculation.getMagicDamage((Player) this.getOwner()) * 1.4F : 2;
-                        target.hurt(IceDamageSource.getIceDamage(this, this.getOwner()), dmg * dmgMult);
+                        target.hurt(KKDamageTypes.getElementalDamage(KKDamageTypes.ICE,this, this.getOwner()), dmg * dmgMult);
                     }
                 }
 			}
@@ -168,7 +167,7 @@ public class BlizzazaEntity extends ThrowableProjectile {
                             if (!Utils.isEntityInParty(casterParty, e) && e != getOwner()) {
                                 float baseDmg = DamageCalculation.getMagicDamage((Player) this.getOwner()) * 1.4F;
                                 float dmg = this.getOwner() instanceof Player ? baseDmg : 2;
-                                e.hurt(IceDamageSource.getIceDamage(this, player), dmg);
+                                e.hurt(KKDamageTypes.getElementalDamage(KKDamageTypes.FIRE,this, player), dmg);
                             }
                         }
                     }

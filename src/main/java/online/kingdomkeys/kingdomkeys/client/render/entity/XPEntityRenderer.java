@@ -1,19 +1,17 @@
 package online.kingdomkeys.kingdomkeys.client.render.entity;
 
-import online.kingdomkeys.kingdomkeys.capability.IPlayerCapabilities;
-import org.joml.Matrix4f;
-
 import com.mojang.blaze3d.vertex.PoseStack;
-
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Font;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.entity.EntityRenderer;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.resources.ResourceLocation;
+import online.kingdomkeys.kingdomkeys.capability.IPlayerCapabilities;
 import online.kingdomkeys.kingdomkeys.capability.ModCapabilities;
 import online.kingdomkeys.kingdomkeys.entity.XPEntity;
 import online.kingdomkeys.kingdomkeys.lib.SoAState;
+import org.joml.Matrix4f;
 
 public class XPEntityRenderer extends EntityRenderer<XPEntity> {
 

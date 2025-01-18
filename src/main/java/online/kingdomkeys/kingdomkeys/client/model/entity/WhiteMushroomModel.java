@@ -13,12 +13,7 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import online.kingdomkeys.kingdomkeys.KingdomKeys;
-import online.kingdomkeys.kingdomkeys.client.ClientUtils.Angle;
-import online.kingdomkeys.kingdomkeys.client.ClientUtils.ModelAnimation;
 import online.kingdomkeys.kingdomkeys.entity.EntityHelper;
-
-import java.util.ArrayList;
-import java.util.List;
 
 //TODO port new model
 @OnlyIn(Dist.CLIENT)

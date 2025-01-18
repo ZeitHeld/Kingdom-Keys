@@ -1,9 +1,6 @@
 package online.kingdomkeys.kingdomkeys.client.render.entity;
 
-import org.joml.Matrix4f;
-
 import com.mojang.blaze3d.vertex.PoseStack;
-
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Font;
 import net.minecraft.client.renderer.MultiBufferSource;
@@ -13,6 +10,7 @@ import net.minecraft.resources.ResourceLocation;
 import online.kingdomkeys.kingdomkeys.client.model.entity.BombModel;
 import online.kingdomkeys.kingdomkeys.entity.EntityHelper;
 import online.kingdomkeys.kingdomkeys.entity.mob.BaseBombEntity;
+import org.joml.Matrix4f;
 
 public class BombRenderer extends MobRenderer<BaseBombEntity, BombModel<BaseBombEntity>> {
 

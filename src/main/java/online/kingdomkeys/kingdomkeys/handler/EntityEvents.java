@@ -1,6 +1,5 @@
 package online.kingdomkeys.kingdomkeys.handler;
 
-import java.awt.*;
 import java.util.*;
 import java.util.List;
 
@@ -100,16 +99,14 @@ public class EntityEvents {
 		if (event.getEntity() instanceof Player player && event.getSound().get().getLocation().getPath().contains("step")) {
 			boolean kbArmor = false;
 			byte index = 0;
-			Iterator<ItemStack> it = player.getArmorSlots().iterator();
-			while (it.hasNext()) {
-				ItemStack a = it.next();
-				if (a.getItem() instanceof ArmorItem armor) {
-					if (index < 3 && armor.getMaterial().getEquipSound() == ModSounds.keyblade_armor.get()) { // If the armor has a kb sound we assume it's a keyblade armor part, if it's index is < 3 it means it's boots, pants or chest.
-						kbArmor = true;
-					}
-				}
-				index++;
-			}
+            for (ItemStack a : player.getArmorSlots()) {
+                if (a.getItem() instanceof ArmorItem armor) {
+                    if (index < 3 && armor.getMaterial().getEquipSound() == ModSounds.keyblade_armor.get()) { // If the armor has a kb sound we assume it's a keyblade armor part, if it's index is < 3 it means it's boots, pants or chest.
+                        kbArmor = true;
+                    }
+                }
+                index++;
+            }
 			if (kbArmor) {
 				event.getEntity().playSound(ModSounds.keyblade_armor.get());
 			}
@@ -1274,9 +1271,8 @@ public class EntityEvents {
 				event.getEntity().level().addFreshEntity(ie);
 			}
 
-			if (event.getSource().getEntity() instanceof IKHMob && ModConfigs.playerSpawnHeartless) {
-				IKHMob killerMob = (IKHMob) event.getSource().getEntity();
-				if (!event.getSource().getEntity().hasCustomName() && (killerMob.getKHMobType() == MobType.HEARTLESS_EMBLEM || killerMob.getKHMobType() == MobType.HEARTLESS_PUREBLOOD)) {
+			if (event.getSource().getEntity() instanceof IKHMob killerMob && ModConfigs.playerSpawnHeartless) {
+                if (!event.getSource().getEntity().hasCustomName() && (killerMob.getKHMobType() == MobType.HEARTLESS_EMBLEM || killerMob.getKHMobType() == MobType.HEARTLESS_PUREBLOOD)) {
 					if (event.getEntity() instanceof Player) { // If a player gets killed by a heartless
 						IPlayerCapabilities playerData = ModCapabilities.getPlayer((Player) event.getEntity());
 
@@ -1317,7 +1313,6 @@ public class EntityEvents {
 				}
 			}
 			if (event.getEntity() instanceof MarluxiaEntity && event.getSource().getEntity() instanceof Player && event.getSource().getEntity().level().dimension().equals(ModDimensions.STATION_OF_SORROW)) {
-				Player player = (Player) event.getSource().getEntity();
 				ResourceKey<Level> dimension = ResourceKey.create(Registries.DIMENSION, new ResourceLocation("overworld"));
 				BlockPos coords = DimensionCommand.getWorldCoords(player, dimension);
 				player.changeDimension(player.getServer().getLevel(dimension), new BaseTeleporter(coords.getX(), coords.getY(), coords.getZ()));
@@ -1327,8 +1322,7 @@ public class EntityEvents {
 
 	@SubscribeEvent
 	public void onFall(LivingFallEvent event) {
-		if (event.getEntity() instanceof Player) {
-			Player player = (Player) event.getEntity();
+		if (event.getEntity() instanceof Player player) {
 			IPlayerCapabilities playerData = ModCapabilities.getPlayer(player);
 			// Check to prevent edge case crash
 			if (playerData != null && playerData.getActiveDriveForm() != null) {

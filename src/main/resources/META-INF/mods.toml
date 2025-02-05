@@ -13,6 +13,12 @@ description='''
 A mod inspired by Kingdom Hearts adding various elements from the games.
 '''
 [[dependencies.kingdomkeys]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.20.1,1.20.2)"
+    ordering="BEFORE"
+    side="BOTH"
+[[dependencies.kingdomkeys]]
     modId="jei"
     mandatory=false
     versionRange="[9.7,)"
@@ -30,3 +36,6 @@ A mod inspired by Kingdom Hearts adding various elements from the games.
     versionRange="[1.20.1-0.7.5,)"
     ordering="BEFORE"
     side="BOTH"
+[mc-publish]
+    modrinth="DrsqKwVw"
+    curseforge=242862

@@ -31,10 +31,26 @@ import yesman.epicfight.world.capabilities.entitypatch.LivingEntityPatch;
 import yesman.epicfight.world.capabilities.entitypatch.player.PlayerPatch;
 
 public class KKAnimations {
-    public static StaticAnimation CHAKRAM_AUTO1, ROXAS_AUTO1, ROXAS_IDLE, ROXAS_RUN,
-            KK_SHIELD_AUTO1, KK_SHIELD_AUTO2, KK_SHIELD_AUTO3, SORA_AUTO1, SORA_AUTO2, SORA_AUTO3, SORA_FINISHER1, VALOR_IDLE, VALOR_AUTO1, VALOR_AUTO2,
-            VALOR_AUTO3, MASTER_IDLE, WISDOM_IDLE, WISDOM_RUN, WISDOM_COMBO1, WISDOM_FINISHER, FINAL_IDLE, FINAL_AUTO1,
-            SORA_SUMMON, DRIVE_SUMMON;
+    public static StaticAnimation
+            ROXAS_AUTO1, ROXAS_IDLE, ROXAS_RUN,
+            KK_SHIELD_AUTO1, KK_SHIELD_AUTO2, KK_SHIELD_AUTO3,
+            SORA_AUTO1, SORA_AUTO2, SORA_AUTO3, SORA_FINISHER1,
+            VALOR_IDLE, VALOR_AUTO1, VALOR_AUTO2, VALOR_AUTO3,
+            MASTER_IDLE,
+            WISDOM_IDLE, WISDOM_RUN, WISDOM_COMBO1, WISDOM_FINISHER,
+            FINAL_IDLE, FINAL_AUTO1,
+            SORA_SUMMON,
+            DRIVE_SUMMON,
+            XEMNAS_IDLE, XEMNAS_WALK, XEMNAS_RUN, XEMNAS_FLY, XEMNAS_SUMMON,
+            XIGBAR_IDLE, XIGBAR_WALK, XIGBAR_SUMMON,
+            XALDIN_IDLE, XALDIN_WALK, XALDIN_RUN, XALDIN_SUMMON,
+            VEXEN_IDLE, VEXEN_WALK, VEXEN_SUMMON,
+            LEXAEUS_IDLE, LEXAEUS_WALK, LEXAEUS_RUN, LEXAEUS_SUMMON,
+            ZEXION_IDLE, ZEXION_WALK, ZEXION_RUN, ZEXION_SUMMON,
+            SAIX_IDLE, SAIX_WALK, SAIX_RUN, SAIX_SUMMON,
+            CHAKRAM_AUTO1, CHAKRAM_IDLE, CHAKRAM_RUN, AXEL_SUMMON,
+            DEMYX_IDLE, DEMYX_WALK, DEMYX_RUN, DEMYX_SUMMON,
+            LUXORD_IDLE, LUXORD_WALK, LUXORD_RUN, LUXORD_SUMMON;
 
     public static Map<OrgMember, StaticAnimation> orgMap = new HashMap<>();
     public static Map<SingleChoices, StaticAnimation> singleKeybladeMap = new HashMap<>();
@@ -52,18 +68,18 @@ public class KKAnimations {
     }
 
     public static void initSummonMap() {
-        orgMap.put(OrgMember.AXEL, KKAnimations.SORA_SUMMON);
-        orgMap.put(OrgMember.DEMYX, KKAnimations.SORA_SUMMON);
+        orgMap.put(OrgMember.AXEL, KKAnimations.AXEL_SUMMON);
+        orgMap.put(OrgMember.DEMYX, KKAnimations.DEMYX_SUMMON);
         orgMap.put(OrgMember.LARXENE, KKAnimations.SORA_SUMMON);
-        orgMap.put(OrgMember.LEXAEUS, KKAnimations.SORA_SUMMON);
+        orgMap.put(OrgMember.LEXAEUS, KKAnimations.LEXAEUS_SUMMON);
         orgMap.put(OrgMember.ROXAS, KKAnimations.SORA_SUMMON);
-        orgMap.put(OrgMember.SAIX, KKAnimations.SORA_SUMMON);
-        orgMap.put(OrgMember.XALDIN, KKAnimations.SORA_SUMMON);
-        orgMap.put(OrgMember.XEMNAS, KKAnimations.SORA_SUMMON);
-        orgMap.put(OrgMember.XIGBAR, KKAnimations.SORA_SUMMON);
-        orgMap.put(OrgMember.LUXORD, KKAnimations.SORA_SUMMON);
-        orgMap.put(OrgMember.ZEXION, KKAnimations.SORA_SUMMON);
-        orgMap.put(OrgMember.VEXEN, KKAnimations.SORA_SUMMON);
+        orgMap.put(OrgMember.SAIX, KKAnimations.SAIX_SUMMON);
+        orgMap.put(OrgMember.XALDIN, KKAnimations.XALDIN_SUMMON);
+        orgMap.put(OrgMember.XEMNAS, KKAnimations.XEMNAS_SUMMON);
+        orgMap.put(OrgMember.XIGBAR, KKAnimations.XIGBAR_SUMMON);
+        orgMap.put(OrgMember.LUXORD, KKAnimations.LUXORD_SUMMON);
+        orgMap.put(OrgMember.ZEXION, KKAnimations.ZEXION_SUMMON);
+        orgMap.put(OrgMember.VEXEN, KKAnimations.VEXEN_SUMMON);
         orgMap.put(OrgMember.MARLUXIA, KKAnimations.SORA_SUMMON);
 
         singleKeybladeMap.put(SingleChoices.SORA, KKAnimations.SORA_SUMMON);
@@ -163,7 +179,7 @@ public class KKAnimations {
         MASTER_IDLE = new StaticAnimation(true, "biped/living/master_idle", Armatures.BIPED);
 
         FINAL_IDLE = new StaticAnimation(true, "biped/living/final_idle", Armatures.BIPED).addProperty(AnimationProperty.StaticAnimationProperty.PLAY_SPEED_MODIFIER, (self, entitypatch, speed, prevElapsedTime, elapsedTime) -> .8f);
-        FINAL_AUTO1 = new BasicAttackAnimation(0.16F, "biped/combat/final_auto1", Armatures.BIPED,
+        FINAL_AUTO1 = new BasicAttackAnimation(0.01F, "biped/combat/final_auto1", Armatures.BIPED,
                 new AttackAnimation.Phase(0.0F, 0.25F, 0.25F, 0.35F, 0.75F, Float.MAX_VALUE, false, InteractionHand.MAIN_HAND, dualKeyblade))
                 .addProperty(AnimationProperty.StaticAnimationProperty.PLAY_SPEED_MODIFIER, (self, entitypatch, speed, prevElapsedTime, elapsedTime) -> .8f);
 
@@ -180,19 +196,123 @@ public class KKAnimations {
                         PacketHandler.sendToServer(new CSSummonKeyblade());
                 }, AnimationEvent.Side.BOTH));
 
-        SORA_AUTO1 = new BasicAttackAnimation(0.8F, 0.05F, 0.39F, 0.4F, KKCollider.KEYBLADE, Armatures.BIPED.toolR, "biped/combat/sora_auto1", Armatures.BIPED).addProperty(AnimationProperty.StaticAnimationProperty.PLAY_SPEED_MODIFIER, (self, entitypatch, speed, prevElapsedTime, elapsedTime) -> .9f);
+        SORA_AUTO1 = new BasicAttackAnimation(-0.85F, 0.05F, 0.39F, 0.4F, KKCollider.KEYBLADE, Armatures.BIPED.toolR, "biped/combat/sora_auto1", Armatures.BIPED).addProperty(AnimationProperty.StaticAnimationProperty.PLAY_SPEED_MODIFIER, (self, entitypatch, speed, prevElapsedTime, elapsedTime) -> 0.9f);
         SORA_AUTO2 = new BasicAttackAnimation(0.16F, 0.05F, 0.39F, 0.4F, KKCollider.KEYBLADE, Armatures.BIPED.toolR, "biped/combat/sora_auto2", Armatures.BIPED).addProperty(AnimationProperty.StaticAnimationProperty.PLAY_SPEED_MODIFIER, (self, entitypatch, speed, prevElapsedTime, elapsedTime) -> .9f);
-        SORA_AUTO3 = new BasicAttackAnimation(0.16F, 0.05F, 0.5F, 0.4F, KKCollider.KEYBLADE, Armatures.BIPED.toolR, "biped/combat/sora_auto3", Armatures.BIPED).addProperty(AnimationProperty.StaticAnimationProperty.PLAY_SPEED_MODIFIER, (self, entitypatch, speed, prevElapsedTime, elapsedTime) -> .8f);
-        SORA_FINISHER1 = new BasicAttackAnimation(0.16F, 0.05F, 0.59F, 0.6F, KKCollider.KEYBLADE, Armatures.BIPED.toolR, "biped/combat/sora_finisher1", Armatures.BIPED).addProperty(AnimationProperty.StaticAnimationProperty.PLAY_SPEED_MODIFIER, (self, entitypatch, speed, prevElapsedTime, elapsedTime) -> .8f);
+        SORA_AUTO3 = new BasicAttackAnimation(0.16F, 0.05F, 0.5F, 0.6F, KKCollider.KEYBLADE, Armatures.BIPED.toolR, "biped/combat/sora_auto3", Armatures.BIPED).addProperty(AnimationProperty.StaticAnimationProperty.PLAY_SPEED_MODIFIER, (self, entitypatch, speed, prevElapsedTime, elapsedTime) -> .9f);
+        SORA_FINISHER1 = new BasicAttackAnimation(-0.85F, 0.05F, 0.59F, 0.6F, KKCollider.KEYBLADE, Armatures.BIPED.toolR, "biped/combat/sora_finisher1", Armatures.BIPED).addProperty(AnimationProperty.StaticAnimationProperty.PLAY_SPEED_MODIFIER, (self, entitypatch, speed, prevElapsedTime, elapsedTime) -> .9f);
 
         KK_SHIELD_AUTO1 = new BasicAttackAnimation(0.16F, 0.05F, 0.16F, 0.7F, null, Armatures.BIPED.toolR, "biped/combat/kk_shield_auto_1", Armatures.BIPED);
         KK_SHIELD_AUTO2 = new BasicAttackAnimation(0.16F, 0.05F, 0.16F, 0.7F, null, Armatures.BIPED.toolR, "biped/combat/kk_shield_auto_2", Armatures.BIPED);
         KK_SHIELD_AUTO3 = new BasicAttackAnimation(0.16F, 0.05F, 0.16F, 0.7F, null, Armatures.BIPED.toolR, "biped/combat/kk_shield_auto_3", Armatures.BIPED);
 
         CHAKRAM_AUTO1 = new BasicAttackAnimation(0.16F, 0.05F, 0.16F, 0.7F, null, Armatures.BIPED.toolR, "biped/combat/chakram_auto_1", Armatures.BIPED);
+        CHAKRAM_IDLE = new StaticAnimation(true, "biped/living/axel_idle", Armatures.BIPED).addProperty(AnimationProperty.StaticAnimationProperty.PLAY_SPEED_MODIFIER, (self, entitypatch, speed, prevElapsedTime, elapsedTime) -> .6f);
+        CHAKRAM_RUN = new StaticAnimation(true, "biped/living/axel_run", Armatures.BIPED);
 
+        XIGBAR_WALK = new StaticAnimation(true, "biped/living/xigbar_walk", Armatures.BIPED);
+        XIGBAR_IDLE = new StaticAnimation(true, "biped/living/xigbar_idle", Armatures.BIPED).addProperty(AnimationProperty.StaticAnimationProperty.PLAY_SPEED_MODIFIER, (self, entitypatch, speed, prevElapsedTime, elapsedTime) -> .6f);
 
+        SAIX_IDLE = new StaticAnimation(true, "biped/living/saix_idle", Armatures.BIPED).addProperty(AnimationProperty.StaticAnimationProperty.PLAY_SPEED_MODIFIER, (self, entitypatch, speed, prevElapsedTime, elapsedTime) -> .6f);
+        SAIX_WALK = new StaticAnimation(true, "biped/living/saix_walk", Armatures.BIPED);
+        SAIX_RUN = new StaticAnimation(true, "biped/living/saix_run", Armatures.BIPED);
 
+        XEMNAS_IDLE = new StaticAnimation(true, "biped/living/xemnas_idle", Armatures.BIPED).addProperty(AnimationProperty.StaticAnimationProperty.PLAY_SPEED_MODIFIER, (self, entitypatch, speed, prevElapsedTime, elapsedTime) -> .6f);
+        XEMNAS_WALK = new StaticAnimation(true, "biped/living/xemnas_walk", Armatures.BIPED);
+        XEMNAS_RUN = new StaticAnimation(true, "biped/living/xemnas_run", Armatures.BIPED);
+        XEMNAS_FLY = new StaticAnimation(true, "biped/living/xemnas_fly", Armatures.BIPED);
+
+        XALDIN_IDLE = new StaticAnimation(true, "biped/living/xaldin_idle", Armatures.BIPED).addProperty(AnimationProperty.StaticAnimationProperty.PLAY_SPEED_MODIFIER, (self, entitypatch, speed, prevElapsedTime, elapsedTime) -> .6f);
+        XALDIN_WALK = new StaticAnimation(true, "biped/living/xaldin_walk", Armatures.BIPED);
+        XALDIN_RUN = new StaticAnimation(true, "biped/living/xaldin_run", Armatures.BIPED);
+
+        DEMYX_IDLE = new StaticAnimation(true, "biped/living/demyx_idle", Armatures.BIPED).addProperty(AnimationProperty.StaticAnimationProperty.PLAY_SPEED_MODIFIER, (self, entitypatch, speed, prevElapsedTime, elapsedTime) -> .6f);
+        DEMYX_WALK = new StaticAnimation(true, "biped/living/demyx_walk", Armatures.BIPED);
+
+        VEXEN_IDLE = new StaticAnimation(true, "biped/living/vexen_idle", Armatures.BIPED).addProperty(AnimationProperty.StaticAnimationProperty.PLAY_SPEED_MODIFIER, (self, entitypatch, speed, prevElapsedTime, elapsedTime) -> .6f);
+        VEXEN_WALK = new StaticAnimation(true, "biped/living/vexen_walk", Armatures.BIPED);
+
+        LEXAEUS_IDLE = new StaticAnimation(true, "biped/living/lexaeus_idle", Armatures.BIPED).addProperty(AnimationProperty.StaticAnimationProperty.PLAY_SPEED_MODIFIER, (self, entitypatch, speed, prevElapsedTime, elapsedTime) -> .6f);
+        LEXAEUS_WALK = new StaticAnimation(true, "biped/living/lexaeus_walk", Armatures.BIPED);
+        LEXAEUS_RUN = new StaticAnimation(true, "biped/living/lexaeus_run", Armatures.BIPED);
+
+        ZEXION_IDLE = new StaticAnimation(true, "biped/living/zexion_idle", Armatures.BIPED).addProperty(AnimationProperty.StaticAnimationProperty.PLAY_SPEED_MODIFIER, (self, entitypatch, speed, prevElapsedTime, elapsedTime) -> .6f);
+        ZEXION_WALK = new StaticAnimation(true, "biped/living/zexion_walk", Armatures.BIPED);
+        ZEXION_RUN = new StaticAnimation(true, "biped/living/zexion_run", Armatures.BIPED);
+
+        LUXORD_IDLE = new StaticAnimation(true, "biped/living/luxord_idle", Armatures.BIPED).addProperty(AnimationProperty.StaticAnimationProperty.PLAY_SPEED_MODIFIER, (self, entitypatch, speed, prevElapsedTime, elapsedTime) -> .6f);
+        LUXORD_WALK = new StaticAnimation(true, "biped/living/luxord_walk", Armatures.BIPED);
+        LUXORD_RUN = new StaticAnimation(true, "biped/living/luxord_walk", Armatures.BIPED);
+
+        XEMNAS_SUMMON = new ActionAnimation(0.05F, "biped/living/xemnas_summon", Armatures.BIPED)
+                .addProperty(AnimationProperty.ActionAnimationProperty.CANCELABLE_MOVE, true)
+                .addProperty(AnimationProperty.StaticAnimationProperty.PLAY_SPEED_MODIFIER, (self, entitypatch, speed, prevElapsedTime, elapsedTime) -> 0.8F)
+                .addEvents(AnimationEvent.TimeStampedEvent.create(.15f, (ep, animation, arr) -> {
+                    if (ep.getOriginal().level().isClientSide && ((PlayerPatch) ep).isBattleMode())
+                        PacketHandler.sendToServer(new CSSummonKeyblade());
+                }, AnimationEvent.Side.BOTH));
+        XIGBAR_SUMMON = new ActionAnimation(0.05F, "biped/living/xigbar_summon", Armatures.BIPED)
+                .addProperty(AnimationProperty.ActionAnimationProperty.CANCELABLE_MOVE, true)
+                .addProperty(AnimationProperty.StaticAnimationProperty.PLAY_SPEED_MODIFIER, (self, entitypatch, speed, prevElapsedTime, elapsedTime) -> 0.8F)
+                .addEvents(AnimationEvent.TimeStampedEvent.create(.15f, (ep, animation, arr) -> {
+                    if (ep.getOriginal().level().isClientSide && ((PlayerPatch) ep).isBattleMode())
+                        PacketHandler.sendToServer(new CSSummonKeyblade());
+                }, AnimationEvent.Side.BOTH));
+        XALDIN_SUMMON = new ActionAnimation(0.05F, "biped/living/xaldin_summon", Armatures.BIPED)
+                .addProperty(AnimationProperty.ActionAnimationProperty.CANCELABLE_MOVE, true)
+                .addProperty(AnimationProperty.StaticAnimationProperty.PLAY_SPEED_MODIFIER, (self, entitypatch, speed, prevElapsedTime, elapsedTime) -> 0.8F)
+                .addEvents(AnimationEvent.TimeStampedEvent.create(.15f, (ep, animation, arr) -> {
+                    if (ep.getOriginal().level().isClientSide && ((PlayerPatch) ep).isBattleMode())
+                        PacketHandler.sendToServer(new CSSummonKeyblade());
+                }, AnimationEvent.Side.BOTH));
+        VEXEN_SUMMON = new ActionAnimation(0.05F, "biped/living/vexen_summon", Armatures.BIPED)
+                .addProperty(AnimationProperty.ActionAnimationProperty.CANCELABLE_MOVE, true)
+                .addProperty(AnimationProperty.StaticAnimationProperty.PLAY_SPEED_MODIFIER, (self, entitypatch, speed, prevElapsedTime, elapsedTime) -> 0.8F)
+                .addEvents(AnimationEvent.TimeStampedEvent.create(.15f, (ep, animation, arr) -> {
+                    if (ep.getOriginal().level().isClientSide && ((PlayerPatch) ep).isBattleMode())
+                        PacketHandler.sendToServer(new CSSummonKeyblade());
+                }, AnimationEvent.Side.BOTH));
+        LEXAEUS_SUMMON = new ActionAnimation(0.05F, "biped/living/lexaeus_summon", Armatures.BIPED)
+                .addProperty(AnimationProperty.ActionAnimationProperty.CANCELABLE_MOVE, true)
+                .addProperty(AnimationProperty.StaticAnimationProperty.PLAY_SPEED_MODIFIER, (self, entitypatch, speed, prevElapsedTime, elapsedTime) -> 0.8F)
+                .addEvents(AnimationEvent.TimeStampedEvent.create(.15f, (ep, animation, arr) -> {
+                    if (ep.getOriginal().level().isClientSide && ((PlayerPatch) ep).isBattleMode())
+                        PacketHandler.sendToServer(new CSSummonKeyblade());
+                }, AnimationEvent.Side.BOTH));
+        ZEXION_SUMMON = new ActionAnimation(0.05F, "biped/living/zexion_summon", Armatures.BIPED)
+                .addProperty(AnimationProperty.ActionAnimationProperty.CANCELABLE_MOVE, true)
+                .addProperty(AnimationProperty.StaticAnimationProperty.PLAY_SPEED_MODIFIER, (self, entitypatch, speed, prevElapsedTime, elapsedTime) -> 0.8F)
+                .addEvents(AnimationEvent.TimeStampedEvent.create(.15f, (ep, animation, arr) -> {
+                    if (ep.getOriginal().level().isClientSide && ((PlayerPatch) ep).isBattleMode())
+                        PacketHandler.sendToServer(new CSSummonKeyblade());
+                }, AnimationEvent.Side.BOTH));
+        SAIX_SUMMON = new ActionAnimation(0.05F, "biped/living/saix_summon", Armatures.BIPED)
+                .addProperty(AnimationProperty.ActionAnimationProperty.CANCELABLE_MOVE, true)
+                .addProperty(AnimationProperty.StaticAnimationProperty.PLAY_SPEED_MODIFIER, (self, entitypatch, speed, prevElapsedTime, elapsedTime) -> 0.8F)
+                .addEvents(AnimationEvent.TimeStampedEvent.create(.15f, (ep, animation, arr) -> {
+                    if (ep.getOriginal().level().isClientSide && ((PlayerPatch) ep).isBattleMode())
+                        PacketHandler.sendToServer(new CSSummonKeyblade());
+                }, AnimationEvent.Side.BOTH));
+        AXEL_SUMMON = new ActionAnimation(0.05F, "biped/living/axel_summon", Armatures.BIPED)
+                .addProperty(AnimationProperty.ActionAnimationProperty.CANCELABLE_MOVE, true)
+                .addProperty(AnimationProperty.StaticAnimationProperty.PLAY_SPEED_MODIFIER, (self, entitypatch, speed, prevElapsedTime, elapsedTime) -> 0.8F)
+                .addEvents(AnimationEvent.TimeStampedEvent.create(.15f, (ep, animation, arr) -> {
+                    if (ep.getOriginal().level().isClientSide && ((PlayerPatch) ep).isBattleMode())
+                        PacketHandler.sendToServer(new CSSummonKeyblade());
+                }, AnimationEvent.Side.BOTH));
+        DEMYX_SUMMON = new ActionAnimation(0.05F, "biped/living/demyx_summon", Armatures.BIPED)
+                .addProperty(AnimationProperty.ActionAnimationProperty.CANCELABLE_MOVE, true)
+                .addProperty(AnimationProperty.StaticAnimationProperty.PLAY_SPEED_MODIFIER, (self, entitypatch, speed, prevElapsedTime, elapsedTime) -> 0.8F)
+                .addEvents(AnimationEvent.TimeStampedEvent.create(.15f, (ep, animation, arr) -> {
+                    if (ep.getOriginal().level().isClientSide && ((PlayerPatch) ep).isBattleMode())
+                        PacketHandler.sendToServer(new CSSummonKeyblade());
+                }, AnimationEvent.Side.BOTH));
+        LUXORD_SUMMON = new ActionAnimation(0.08F, "biped/living/luxord_summon", Armatures.BIPED)
+                .addProperty(AnimationProperty.ActionAnimationProperty.CANCELABLE_MOVE, true)
+                .addProperty(AnimationProperty.StaticAnimationProperty.PLAY_SPEED_MODIFIER, (self, entitypatch, speed, prevElapsedTime, elapsedTime) -> 0.8F)
+                .addEvents(AnimationEvent.TimeStampedEvent.create(.15f, (ep, animation, arr) -> {
+                    if (ep.getOriginal().level().isClientSide && ((PlayerPatch) ep).isBattleMode())
+                        PacketHandler.sendToServer(new CSSummonKeyblade());
+                }, AnimationEvent.Side.BOTH));
         initSummonMap();
     }
 }

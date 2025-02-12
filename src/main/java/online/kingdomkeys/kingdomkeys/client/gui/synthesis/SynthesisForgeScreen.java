@@ -176,7 +176,7 @@ public class SynthesisForgeScreen extends MenuFilterable {
 
         addRenderableWidget(upgrade = Button.builder(Component.translatable(Utils.translateToLocal(Strings.Gui_Synthesis_Forge_Upgrade)), (e) -> {
 			action("upgrade");
-		}).bounds((int) (boxM.getX()+3), (int) (height * 0.67), 70, 20).build());
+		}).bounds(boxM.getX()+3, (int) (height * 0.67), 70, 20).build());
 	}
 
 	@Override
@@ -216,8 +216,6 @@ public class SynthesisForgeScreen extends MenuFilterable {
 		} else {
 			upgrade.visible = false;
 		}
-
-		matrixStack.popPose();
 
 		for(Renderable renderable : this.inventory){
 			if(renderable instanceof MenuStockItem menuStockItem){

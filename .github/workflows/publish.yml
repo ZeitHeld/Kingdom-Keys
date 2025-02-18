@@ -4,8 +4,8 @@ on: [ workflow_dispatch ]
 
 env:
   JAVA_VERSION: 17
-  VERSION: 2.6.0a-1.20.1
-  RELEASE_NAME: Kingdom Keys 2.6.0a
+  MC_VERSION: 1.20.1
+  RELEASE_NAME: Kingdom Keys
   MODRINTH_TOKEN: ${{ secrets.PUBLISH_MODRINTH_TOKEN }}
   CURSEFORGE_TOKEN: ${{ secrets.PUBLISH_CURSEFORGE_TOKEN }}
 
@@ -37,6 +37,13 @@ jobs:
       - name: Build
         run: ./gradlew clean build
 
+      - name: Get version number
+        uses: BrycensRanch/read-properties-action@v1.0.4
+        id: kk_version
+        with:
+          file: gradle.properties
+          property: kk_version
+
       - name: Publish (CurseForge/Modrinth)
         uses: Kir-Antipov/mc-publish@v3.3
         with:
@@ -46,8 +53,8 @@ jobs:
           modrinth-id: DrsqKwVw
           modrinth-token: "${{env.MODRINTH_TOKEN}}"
 
-          name: "${{env.RELEASE_NAME}}"
-          version: "${{env.VERSION}}"
+          name: "${{env.RELEASE_NAME}} ${{steps.kk_version.outputs.kk_version}}"
+          version: "${{steps.kk_version.outputs.kk_version}}-${{env.MC_VERSION}}"
           version-type: release
           changelog-file: CHANGELOG.md
           loaders: forge

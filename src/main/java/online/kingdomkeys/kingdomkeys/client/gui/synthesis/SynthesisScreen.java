@@ -1,18 +1,26 @@
 package online.kingdomkeys.kingdomkeys.client.gui.synthesis;
 
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphics;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundSource;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
 import online.kingdomkeys.kingdomkeys.KingdomKeys;
+import online.kingdomkeys.kingdomkeys.capability.IPlayerCapabilities;
+import online.kingdomkeys.kingdomkeys.capability.ModCapabilities;
 import online.kingdomkeys.kingdomkeys.client.gui.elements.MenuBackground;
 import online.kingdomkeys.kingdomkeys.client.gui.elements.buttons.MenuButton;
 import online.kingdomkeys.kingdomkeys.client.gui.elements.buttons.MenuButton.ButtonType;
 import online.kingdomkeys.kingdomkeys.client.sound.ModSounds;
 import online.kingdomkeys.kingdomkeys.config.ModConfigs;
+import online.kingdomkeys.kingdomkeys.item.KeychainItem;
 import online.kingdomkeys.kingdomkeys.lib.Strings;
 import online.kingdomkeys.kingdomkeys.network.PacketHandler;
 import online.kingdomkeys.kingdomkeys.network.cts.CSCloseMoogleGUI;
+import online.kingdomkeys.kingdomkeys.synthesis.material.ModMaterials;
 import online.kingdomkeys.kingdomkeys.synthesis.shop.ShopListRegistry;
 import online.kingdomkeys.kingdomkeys.util.Utils;
 import org.jetbrains.annotations.NotNull;
@@ -94,6 +102,39 @@ public class SynthesisScreen extends MenuBackground {
 		addRenderableWidget(synthesise = new MenuButton((int) buttonPosX, button_statsY + (pos++ * 18), (int) buttonWidth, Utils.translateToLocal(Strings.Gui_Synthesis_Synthesise), ButtonType.BUTTON, (e) -> { action("synthesise"); }));
 		addRenderableWidget(forge = new MenuButton((int) buttonPosX, button_statsY + (pos++ * 18), (int) buttonWidth, Utils.translateToLocal(Strings.Gui_Synthesis_Forge), ButtonType.BUTTON, (e) -> { action("forge"); }));
 		addRenderableWidget(materials = new MenuButton((int) buttonPosX, button_statsY + (pos++ * 18), (int) buttonWidth, Utils.translateToLocal(Strings.Gui_Synthesis_Materials), ButtonType.BUTTON, (e) -> { action("materials"); }));
+
+		boolean hasKeychain = false;
+		boolean hasMaterial = false;
+		Player player = Minecraft.getInstance().player;
+		for (int i = 0; i < player.getInventory().getContainerSize(); i++) {
+			if (!hasKeychain && player.getInventory().getItem(i).getItem() instanceof KeychainItem) {
+				hasKeychain = true;
+			}
+			ResourceLocation itemKey = BuiltInRegistries.ITEM.getKey(player.getInventory().getItem(i).getItem());
+			ResourceLocation materialKey = new ResourceLocation(itemKey.getNamespace(), Strings.SM_Prefix + itemKey.getPath());
+			if (!hasMaterial && ModMaterials.registry.get().containsKey(materialKey)) {
+				hasMaterial = true;
+			}
+		}
+
+		IPlayerCapabilities playerData = ModCapabilities.getPlayer(player);
+
+		for (ItemStack stack : playerData.getEquippedKeychains().values()) {
+			if (!stack.isEmpty()) {
+				hasKeychain = true;
+				break;
+			}
+		}
+
+		if (playerData.getKnownRecipeList().isEmpty()) {
+			synthesise.active = false;
+		}
+		if (!hasKeychain) {
+			forge.active = false;
+		}
+		if (playerData.getMaterialMap().isEmpty() && !hasMaterial) {
+			materials.active = false;
+		}
 	}
 
 	@Override

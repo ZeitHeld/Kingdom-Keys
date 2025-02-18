@@ -1,9 +1,5 @@
 Changed:
-* [EFM] Sora animations are faster
-* [EFM] Added summon, idle, walking and running animations for all org members
-* [EFM] Most Org members have revamped movesets until animated. Note: Demyx, Xigbar, Zexion, and Luxord do NOT have movesets yet.
-  
-Fixed:
-* Crash with Elemental Damage
-* Possible crash related to lock on
-* Keyblade Forge gui random rendering crash
+* Synthesis submenus are only accessible if necessary, so the keyblade forge is only accessible if you have a keychain, materials are only accessible if you have a material, synthesis only if you have a recipe (normally you should always have some)
+* [EFM] All Organization weapons now have movesets @Xephiro
+* Updated german translation @ZeitHeld 
+* Added journal entries for mushroom Heartless @ZeitHeld

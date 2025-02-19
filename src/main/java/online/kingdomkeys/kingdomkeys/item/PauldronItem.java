@@ -124,15 +124,6 @@ public class PauldronItem extends Item implements IItemCategory {
 	@Override
 	public void inventoryTick(ItemStack stack, Level worldIn, Entity entityIn, int itemSlot, boolean isSelected) {
 		if (stack.getTag() != null) {
-			if (!stack.getTag().contains("created")) {
-				stack.getTag().putBoolean("created", true);
-				stack.getCapability(ForgeCapabilities.ITEM_HANDLER).ifPresent(iItemHandler -> {
-					iItemHandler.insertItem(0, new ItemStack(items[3]), false);
-					iItemHandler.insertItem(1, new ItemStack(items[2]), false);
-					iItemHandler.insertItem(2, new ItemStack(items[1]), false);
-					iItemHandler.insertItem(3, new ItemStack(items[0]), false);
-				});
-			}
 			if (!stack.getTag().hasUUID("armorID"))
 				stack.setTag(setID(stack.getTag()));
 		} else {

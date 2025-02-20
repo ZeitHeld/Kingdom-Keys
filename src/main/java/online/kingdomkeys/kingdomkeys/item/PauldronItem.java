@@ -140,9 +140,9 @@ public class PauldronItem extends Item implements IItemCategory {
 						pauldronInventory.setStackInSlot(1, new ItemStack(items[2]));
 						pauldronInventory.setStackInSlot(2, new ItemStack(items[1]));
 						pauldronInventory.setStackInSlot(3, new ItemStack(items[0]));
+						stack.getTag().putBoolean("created", true);
 					}
 				});
-				stack.getTag().putBoolean("created", true);
 			}
 			if (!stack.getTag().hasUUID("armorID"))
 				stack.setTag(setID(stack.getTag()));

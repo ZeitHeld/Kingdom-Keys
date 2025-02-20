@@ -38,6 +38,7 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.common.capabilities.ForgeCapabilities;
+import net.minecraftforge.items.IItemHandlerModifiable;
 import net.minecraftforge.registries.ForgeRegistries;
 import online.kingdomkeys.kingdomkeys.KingdomKeys;
 import online.kingdomkeys.kingdomkeys.ability.Ability;
@@ -589,9 +590,9 @@ public class Utils {
 			ItemStack pauldron = playerData.getEquippedKBArmor(0);
 			pauldron.getCapability(ForgeCapabilities.ITEM_HANDLER).ifPresent(iItemHandler -> {
 				if (stack.getItem() instanceof ArmorItem armorItem) {
-					iItemHandler.extractItem(armorItem.getType().ordinal(), 1, false);
+					IItemHandlerModifiable pauldronInventory = (IItemHandlerModifiable) iItemHandler;
 					stack.getTag().remove("armorID");
-					iItemHandler.insertItem(armorItem.getType().ordinal(), stack, false);
+					pauldronInventory.setStackInSlot(armorItem.getType().ordinal(), stack);
 				}
 			});
 			PacketHandler.sendTo(new SCSyncCapabilityPacket(playerData), (ServerPlayer) player);

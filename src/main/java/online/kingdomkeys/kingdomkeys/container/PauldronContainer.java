@@ -51,13 +51,16 @@ public class PauldronContainer extends AbstractContainerMenu {
             itemstack = itemstack1.copy();
             if (index < 4) {
                 if (!this.moveItemStackTo(itemstack1, 4, this.slots.size(), true)) {
+                    slot.setChanged();
                     return ItemStack.EMPTY;
                 }
             } else if (!this.moveItemStackTo(itemstack1, 0, 4, false)) {
+                slot.setChanged();
                 return ItemStack.EMPTY;
             }
 
             if (itemstack1.isEmpty()) {
+                slot.setChanged();
                 slot.set(ItemStack.EMPTY);
             } else {
                 slot.setChanged();

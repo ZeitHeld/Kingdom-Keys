@@ -7,6 +7,7 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.common.capabilities.ForgeCapabilities;
+import net.minecraftforge.items.IItemHandlerModifiable;
 import online.kingdomkeys.kingdomkeys.capability.IGlobalCapabilities;
 import online.kingdomkeys.kingdomkeys.capability.ModCapabilities;
 import online.kingdomkeys.kingdomkeys.client.sound.ModSounds;
@@ -47,11 +48,12 @@ public abstract class LivingEntityMixin {
                 if (stack.getTag() != null) {
                     if (Utils.hasArmorID(stack)) {
                         ModCapabilities.getPlayer(player).getEquippedKBArmor(0).getCapability(ForgeCapabilities.ITEM_HANDLER).ifPresent(iItemHandler -> {
+                            IItemHandlerModifiable pauldronInventory = (IItemHandlerModifiable) iItemHandler;
                             switch (pSlot) {
-                                case HEAD -> iItemHandler.extractItem(0, 1, false);
-                                case CHEST -> iItemHandler.extractItem(1, 1, false);
-                                case LEGS -> iItemHandler.extractItem(2, 1, false);
-                                case FEET -> iItemHandler.extractItem(3, 1, false);
+                                case HEAD -> pauldronInventory.setStackInSlot(0, ItemStack.EMPTY);
+                                case CHEST -> pauldronInventory.setStackInSlot(1, ItemStack.EMPTY);
+                                case LEGS -> pauldronInventory.setStackInSlot(2, ItemStack.EMPTY);
+                                case FEET -> pauldronInventory.setStackInSlot(3, ItemStack.EMPTY);
                             }
                             player.level().playSound(null, player.position().x(), player.position().y(), player.position().z(), ModSounds.unsummon.get(), SoundSource.MASTER, 1.0f, 1.0f);
                         });

@@ -181,9 +181,11 @@ public class PauldronItem extends Item implements IItemCategory {
 		});
 
 		if (flagIn.isAdvanced()) {
-			if (stack.getTag().hasUUID("armorID")) {
-				tooltip.add(Component.translatable(ChatFormatting.RED + "DEBUG:"));
-				tooltip.add(Component.translatable(ChatFormatting.WHITE + stack.getTag().getUUID("armorID").toString()));
+			if (stack.getTag() != null) {
+				if (stack.getTag().hasUUID("armorID")) {
+					tooltip.add(Component.translatable(ChatFormatting.RED + "DEBUG:"));
+					tooltip.add(Component.translatable(ChatFormatting.WHITE + stack.getTag().getUUID("armorID").toString()));
+				}
 			}
 		}
 	}

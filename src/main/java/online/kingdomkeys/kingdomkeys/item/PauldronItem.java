@@ -15,6 +15,7 @@ import net.minecraft.world.SimpleMenuProvider;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.item.*;
 import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.level.Level;
@@ -23,6 +24,7 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.common.capabilities.ForgeCapabilities;
 import net.minecraftforge.common.capabilities.ICapabilityProvider;
 import net.minecraftforge.items.IItemHandler;
+import net.minecraftforge.items.IItemHandlerModifiable;
 import net.minecraftforge.network.NetworkHooks;
 import online.kingdomkeys.kingdomkeys.api.item.IItemCategory;
 import online.kingdomkeys.kingdomkeys.api.item.ItemCategory;
@@ -124,6 +126,24 @@ public class PauldronItem extends Item implements IItemCategory {
 	@Override
 	public void inventoryTick(ItemStack stack, Level worldIn, Entity entityIn, int itemSlot, boolean isSelected) {
 		if (stack.getTag() != null) {
+			if (!stack.getTag().contains("created")) {
+				stack.getCapability(ForgeCapabilities.ITEM_HANDLER).ifPresent(iItemHandler -> {
+					IItemHandlerModifiable pauldronInventory = (IItemHandlerModifiable) iItemHandler;
+					boolean alreadyHasItem = false;
+					for (int i = 0; i < pauldronInventory.getSlots(); i++) {
+						if (!pauldronInventory.getStackInSlot(i).isEmpty()) {
+							alreadyHasItem = true;
+						}
+					}
+					if (!alreadyHasItem) {
+						pauldronInventory.setStackInSlot(0, new ItemStack(items[3]));
+						pauldronInventory.setStackInSlot(1, new ItemStack(items[2]));
+						pauldronInventory.setStackInSlot(2, new ItemStack(items[1]));
+						pauldronInventory.setStackInSlot(3, new ItemStack(items[0]));
+					}
+				});
+				stack.getTag().putBoolean("created", true);
+			}
 			if (!stack.getTag().hasUUID("armorID"))
 				stack.setTag(setID(stack.getTag()));
 		} else {

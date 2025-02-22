@@ -1201,8 +1201,6 @@
   "item.kingdomkeys.wishing_lamp.desc": "Besitzt hohe Magiekraft, und erhöht die Menge an Talern, HP- und MP-Kugeln, die besiegte Gegner hinterlassen.",
 
   //Final Mix
-  "item.kingdomkeys.stormfall": "Regensturm",
-  "item.kingdomkeys.stormfall_chain": "Regensturm-Anhänger", //aqua
   "item.kingdomkeys.winners_proof": "Siegesbeweis",
   "item.kingdomkeys.winners_proof_chain": "Siegesbeweis-Anhänger",
   "item.kingdomkeys.winners_proof.desc": "Gute Kombination aus exessiver Magiekraft und sehr großer Angriffskraft. Deaktiviert das Erlangen von Erfahrungspunkten beim Sieg über Gegner.",
@@ -1247,6 +1245,9 @@
   "item.kingdomkeys.rainfell": "Regenfall", //aqua og
   "item.kingdomkeys.rainfell_chain": "Regenfall-Anhänger",
   "item.kingdomkeys.rainfell.desc": "Aquas erstes Schlüsselschwert.\nEs hat eine geringe Reichweite, aber ausgeglichene Angriffs- und Magiekraft.",
+  "item.kingdomkeys.stormfall": "Regensturm",
+  "item.kingdomkeys.stormfall_chain": "Regensturm-Anhänger", //aqua
+  "item.kingdomkeys.stormfall.desc": "Ein sehr ausgeglichenes Schlüsselschwert mit allgemein hohen Werten.",
   "item.kingdomkeys.stroke_of_midnight": "Punkt Mitternacht",
   "item.kingdomkeys.stroke_of_midnight_chain": "Punkt Mitternacht-Anhänger",
   "item.kingdomkeys.stroke_of_midnight.desc": "Dieses Schlüsselschwert ermöglicht kritische Treffer häufiger.",
@@ -1943,7 +1944,6 @@
   "item.kingdomkeys.soul_eater.desc": "A sword that swims with darkness. Possesses high Strength.",
   "item.kingdomkeys.spellbinder.desc": "Raises max MP by 2, and significantly enhances magic and summon power.",
 
-  "item.kingdomkeys.stormfall.desc": "A well-balanced Keyblade that provides an extra boost to all your stats.",
   "item.kingdomkeys.sweet_dreams.desc": "A Keyblade with long reach that provides an extra boost in Strength and makes it easier to land critical hits.",
   "item.kingdomkeys.sweetstack.desc": "A Keyblade that provides an extra boost in Strength and ensures every strike is a critical hit.",
   "item.kingdomkeys.three_wishes.desc": "A powerful weapon that is difficult to deflect.",

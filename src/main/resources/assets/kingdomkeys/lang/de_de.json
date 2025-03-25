@@ -1210,8 +1210,9 @@
 
   "item.kingdomkeys.brightcrest": "Lichtwappen",
   "item.kingdomkeys.brightcrest_chain": "Lichtwappen-Anhänger",
-  "item.kingdomkeys.chaos_ripper": "Chaosbringer",
+  "item.kingdomkeys.chaos_ripper": "Chaosbringer", //terra
   "item.kingdomkeys.chaos_ripper_chain": "Chaosbringer-Anhänger",
+  "item.kingdomkeys.chaos_ripper.desc": "Ein Schlüsselschwert mit hoher Reichweite und außergeöhnlich hohem Angriffswert, aber niedrigem Magiewert.",
   "item.kingdomkeys.darkgnaw": "Schattenlefzen", //terra
   "item.kingdomkeys.darkgnaw_chain": "Schattenlefzen-Anhänger",
   "item.kingdomkeys.darkgnaw.desc": "Ein Schlüsselschwert mit geringer Reichweite, das nur selten kritische Treffer ermöglicht, aber einen hohen Angriffswert hat.",
@@ -1903,7 +1904,6 @@
   "item.kingdomkeys.bond_of_the_blaze.desc": "Das Schlüsselschwert, dass von Lea getragen wird.",
 
   "item.kingdomkeys.brightcrest.desc": "A Keyblade with long reach that provides an outstanding boost in Magic. It also makes it easier to land critical hits, and deals higher damage when you do.",
-  "item.kingdomkeys.chaos_ripper.desc": "A Keyblade with long reach that does little for your Magic, but provides an outstanding boost in Strength.",
 
 
   "item.kingdomkeys.crabclaw.desc": "Raises max MP by 1, and enhances magic and summon power. Also deals good physical damage.",

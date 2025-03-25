@@ -1212,15 +1212,15 @@
   "item.kingdomkeys.brightcrest_chain": "Lichtwappen-Anhänger",
   "item.kingdomkeys.chaos_ripper": "Chaosbringer",
   "item.kingdomkeys.chaos_ripper_chain": "Chaosbringer-Anhänger",
-  "item.kingdomkeys.darkgnaw": "Schattenlefzen",
+  "item.kingdomkeys.darkgnaw": "Schattenlefzen", //terra
   "item.kingdomkeys.darkgnaw_chain": "Schattenlefzen-Anhänger",
-  "item.kingdomkeys.darkgnaw.desc": "A Keyblade that makes up for its poor reach and low critical hit ratio by providing an extra boost in Strength.",
+  "item.kingdomkeys.darkgnaw.desc": "Ein Schlüsselschwert mit geringer Reichweite, das nur selten kritische Treffer ermöglicht, aber einen hohen Angriffswert hat.",
   "item.kingdomkeys.earthshaker": "Erderschütterer", //terra og
   "item.kingdomkeys.earthshaker_chain": "Erderschütterer-Anhänger",
   "item.kingdomkeys.earthshaker.desc": "Das Schlüsselschwert mit dem Terra seine Reise begann.\nEs hat eine geringe Reichweite, aber einen realtiv hohen Angriffswert.",
-  "item.kingdomkeys.ends_of_the_earth": "Hinter dem Horizont",
+  "item.kingdomkeys.ends_of_the_earth": "Hinter dem Horizont", //terra+
   "item.kingdomkeys.ends_of_the_earth_chain": "Hinter dem Horizont-Anhänger",
-  "item.kingdomkeys.ends_of_the_earth.desc": "A well-balanced Keyblade that provides an extra boost to all your stats.",
+  "item.kingdomkeys.ends_of_the_earth.desc": "Eine verbesserte Version von Terras erstem Schlüsselschwert.\nEs ist sehr ausgeglichen mit allgemein hohen Werten.",
   "item.kingdomkeys.fairy_stars": "Feengestirn",
   "item.kingdomkeys.fairy_stars_chain": "Feengestirn-Anhänger",
   "item.kingdomkeys.fairy_stars.desc": "Ein Schlüsselschwert mit ausgeglichener Angriffs- und Magiekraft.",
@@ -1244,10 +1244,10 @@
   "item.kingdomkeys.pixie_petal.desc": "Ein Schlüsselschwert mit geringer Reichweite aber hoher Magiekraft. Es ermöglicht häuffiger kritische Treffer mit hohem Schaden.",
   "item.kingdomkeys.rainfell": "Regenfall", //aqua og
   "item.kingdomkeys.rainfell_chain": "Regenfall-Anhänger",
-  "item.kingdomkeys.rainfell.desc": "Aquas erstes Schlüsselschwert.\nEs hat eine geringe Reichweite, aber ausgeglichene Angriffs- und Magiekraft.",
+  "item.kingdomkeys.rainfell.desc": "Das Schlüsselschwert mit dem Aqua ihre Reise begann.\nEs hat eine geringe Reichweite, aber ausgeglichene Angriffs- und Magiekraft.",
   "item.kingdomkeys.stormfall": "Regensturm",
-  "item.kingdomkeys.stormfall_chain": "Regensturm-Anhänger", //aqua
-  "item.kingdomkeys.stormfall.desc": "Ein sehr ausgeglichenes Schlüsselschwert mit allgemein hohen Werten.",
+  "item.kingdomkeys.stormfall_chain": "Regensturm-Anhänger", //aqua+
+  "item.kingdomkeys.stormfall.desc": "Eine verbesserte Version von Aquas erstem Schlüsselschwert.\nEs ist sehr ausgeglichen mit allgemein hohen Werten.",
   "item.kingdomkeys.stroke_of_midnight": "Punkt Mitternacht",
   "item.kingdomkeys.stroke_of_midnight_chain": "Punkt Mitternacht-Anhänger",
   "item.kingdomkeys.stroke_of_midnight.desc": "Dieses Schlüsselschwert ermöglicht kritische Treffer häufiger.",

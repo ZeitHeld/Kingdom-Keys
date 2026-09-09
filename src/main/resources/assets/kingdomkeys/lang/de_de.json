@@ -200,7 +200,7 @@
   "advancements.kingdomkeys.to_soa.desc": "Tauche in dein Herz hinein",
   "advancements.kingdomkeys.upgrade_keyblade": "Noch Stärker?",
   "advancements.kingdomkeys.upgrade_keyblade.desc": "Verbessere dein Schlüsselschwert in der Mogry-Schmiede",
-  
+
   //BIOMES
 
   "biome.kingdomkeys.castle_oblivion": "Schloss des Entfallens",
@@ -287,12 +287,12 @@
   "block.kingdomkeys.linked_savepoint": "Verbundener Speicherpunkt",
   "block.kingdomkeys.warp_point": "Warp-Punkt",
 
-  "block.kingdomkeys.gummi_hangar": "Gumi-Hangar",
+  "block.kingdomkeys.gummi_editor": "Gumi-Editor",
   "block.kingdomkeys.magical_chest": "Magische Truhe",
   "block.kingdomkeys.moogle_projector": "Mogry-Projektor",
   "block.kingdomkeys.org_portal": "Organisations-Portal",
   "block.kingdomkeys.pedestal": "Podest",
-  
+
   "block.kingdomkeys.rod_cracked_stone": "Rissiger Dunkelstein",
   "block.kingdomkeys.rod_sand": "Dunkelsand",
   "block.kingdomkeys.rod_stone": "Dunkelstein",
@@ -316,7 +316,7 @@
 
   "container.magical_chest": "Magische Truhe",
   "container.pedestal": "Podest",
-  "container.gummi_hangar": "Gumi Hangar",
+  "container.gummi_editor": "Gumi Editor",
 
   //DISC
 
@@ -383,7 +383,7 @@
   "entity.kingdomkeys.entity_hp_orb": "HP-Kugel",
   "entity.kingdomkeys.entity_mp_orb": "MP-Kugel",
   "entity.kingdomkeys.entity_munny": "Taler",
-  
+
   "entity.kingdomkeys.entity_org_portal": "Organisations-Portal",
 
   // FORM NAMES
@@ -844,7 +844,7 @@
   "item.kingdomkeys.blizzagun_armlet": "Eisgan-Klammer",
   "item.kingdomkeys.blizzara_armlet": "Eisra-Klammer",
   "item.kingdomkeys.blizzard_armlet": "Eis-Klammer",
-  "item.kingdomkeys.buster_band": "Ritterband", 
+  "item.kingdomkeys.buster_band": "Ritterband",
   "item.kingdomkeys.champion_belt": "Champion-Gurt",
   "item.kingdomkeys.chaos_anklet": "Chaos-Kettchen",
   "item.kingdomkeys.cosmic_belt": "Kosmischer Gurt",
@@ -857,7 +857,7 @@
   "item.kingdomkeys.firagun_bangle": "Feugan-Reif",
   "item.kingdomkeys.fire_bangle": "Feuer-Reif",
   "item.kingdomkeys.gaia_belt": "Gaia-Gurt",
-  "item.kingdomkeys.grand_ribbon": "Universal-Ribbon",
+  "item.kingdomkeys.grand_ribbon": "Universal-Schleife",
   "item.kingdomkeys.midnight_anklet": "Mitternachts-Kettchen",
   "item.kingdomkeys.petite_ribbon": "Kleine Schleife",
   "item.kingdomkeys.power_band": "Energieband",
@@ -875,7 +875,7 @@
 
   "item.kingdomkeys.aced_boots": "Aced Schuhe",
   "item.kingdomkeys.aced_chestplate": "Aced Mantel",
-  "item.kingdomkeys.aced_helmet": "Aced kapuze",
+  "item.kingdomkeys.aced_helmet": "Aced Kapuze",
   "item.kingdomkeys.aced_leggings": "Aced Hose",
 
   "item.kingdomkeys.anticoat_boots": "Antirobe Schuhe",
@@ -1014,7 +1014,7 @@
 
   // -CONSUMABLES
 
-  
+
   // --COMMAND ITEMS
   "item.kingdomkeys.ether": "Äther",
   "item.kingdomkeys.elixir": "Elixier",
@@ -1201,8 +1201,6 @@
   "item.kingdomkeys.wishing_lamp.desc": "Besitzt hohe Magiekraft, und erhöht die Menge an Talern, HP- und MP-Kugeln, die besiegte Gegner hinterlassen.",
 
   //Final Mix
-  "item.kingdomkeys.stormfall": "Regensturm",
-  "item.kingdomkeys.stormfall_chain": "Regensturm-Anhänger", //aqua
   "item.kingdomkeys.winners_proof": "Siegesbeweis",
   "item.kingdomkeys.winners_proof_chain": "Siegesbeweis-Anhänger",
   "item.kingdomkeys.winners_proof.desc": "Gute Kombination aus exessiver Magiekraft und sehr großer Angriffskraft. Deaktiviert das Erlangen von Erfahrungspunkten beim Sieg über Gegner.",
@@ -1212,17 +1210,18 @@
 
   "item.kingdomkeys.brightcrest": "Lichtwappen",
   "item.kingdomkeys.brightcrest_chain": "Lichtwappen-Anhänger",
-  "item.kingdomkeys.chaos_ripper": "Chaosbringer",
+  "item.kingdomkeys.chaos_ripper": "Chaosbringer", //terra
   "item.kingdomkeys.chaos_ripper_chain": "Chaosbringer-Anhänger",
-  "item.kingdomkeys.darkgnaw": "Schattenlefzen",
+  "item.kingdomkeys.chaos_ripper.desc": "Ein Schlüsselschwert mit hoher Reichweite und außergeöhnlich hohem Angriffswert, aber niedrigem Magiewert.",
+  "item.kingdomkeys.darkgnaw": "Schattenlefzen", //terra
   "item.kingdomkeys.darkgnaw_chain": "Schattenlefzen-Anhänger",
-  "item.kingdomkeys.darkgnaw.desc": "A Keyblade that makes up for its poor reach and low critical hit ratio by providing an extra boost in Strength.",
+  "item.kingdomkeys.darkgnaw.desc": "Ein Schlüsselschwert mit geringer Reichweite, das nur selten kritische Treffer ermöglicht, aber einen hohen Angriffswert hat.",
   "item.kingdomkeys.earthshaker": "Erderschütterer", //terra og
   "item.kingdomkeys.earthshaker_chain": "Erderschütterer-Anhänger",
-  "item.kingdomkeys.earthshaker.desc": "Das Schlüsselschwert mit dem Ventus seine Reise begann.\nWhat it lacks in reach it makes up for with a slight boost in Strength.",
-  "item.kingdomkeys.ends_of_the_earth": "Hinter dem Horizont",
+  "item.kingdomkeys.earthshaker.desc": "Das Schlüsselschwert mit dem Terra seine Reise begann.\nEs hat eine geringe Reichweite, aber einen realtiv hohen Angriffswert.",
+  "item.kingdomkeys.ends_of_the_earth": "Hinter dem Horizont", //terra+
   "item.kingdomkeys.ends_of_the_earth_chain": "Hinter dem Horizont-Anhänger",
-  "item.kingdomkeys.ends_of_the_earth.desc": "A well-balanced Keyblade that provides an extra boost to all your stats.",
+  "item.kingdomkeys.ends_of_the_earth.desc": "Eine verbesserte Version von Terras erstem Schlüsselschwert.\nEs ist sehr ausgeglichen mit allgemein hohen Werten.",
   "item.kingdomkeys.fairy_stars": "Feengestirn",
   "item.kingdomkeys.fairy_stars_chain": "Feengestirn-Anhänger",
   "item.kingdomkeys.fairy_stars.desc": "Ein Schlüsselschwert mit ausgeglichener Angriffs- und Magiekraft.",
@@ -1246,7 +1245,10 @@
   "item.kingdomkeys.pixie_petal.desc": "Ein Schlüsselschwert mit geringer Reichweite aber hoher Magiekraft. Es ermöglicht häuffiger kritische Treffer mit hohem Schaden.",
   "item.kingdomkeys.rainfell": "Regenfall", //aqua og
   "item.kingdomkeys.rainfell_chain": "Regenfall-Anhänger",
-  "item.kingdomkeys.rainfell.desc": "Aquas erstes Schlüsselschwert.\nEs hat eine geringe Reichweite, aber ausgeglichene Angriffs- und Magiekraft.",
+  "item.kingdomkeys.rainfell.desc": "Das Schlüsselschwert mit dem Aqua ihre Reise begann.\nEs hat eine geringe Reichweite, aber ausgeglichene Angriffs- und Magiekraft.",
+  "item.kingdomkeys.stormfall": "Regensturm",
+  "item.kingdomkeys.stormfall_chain": "Regensturm-Anhänger", //aqua+
+  "item.kingdomkeys.stormfall.desc": "Eine verbesserte Version von Aquas erstem Schlüsselschwert.\nEs ist sehr ausgeglichen mit allgemein hohen Werten.",
   "item.kingdomkeys.stroke_of_midnight": "Punkt Mitternacht",
   "item.kingdomkeys.stroke_of_midnight_chain": "Punkt Mitternacht-Anhänger",
   "item.kingdomkeys.stroke_of_midnight.desc": "Dieses Schlüsselschwert ermöglicht kritische Treffer häufiger.",
@@ -1334,7 +1336,7 @@
   "item.kingdomkeys.young_xehanorts_keyblade": "Junger Xehanort's Schlüsselschwert",
   "item.kingdomkeys.young_xehanorts_keyblade_chain": "Junger Xehanort's Schlüsselschwert-Anhänger",
   "item.kingdomkeys.young_xehanorts_keyblade.desc": "Das Schlüsselschwert, getragen vom Jungen Xehanort, es ermöglicht das Zeitreisen.",
-  
+
   // ---KH3
 
   "item.kingdomkeys.advent_red": "Scharlachrote Reunion", //switch
@@ -1444,7 +1446,7 @@
   "item.kingdomkeys.annihilation": "Vernichtung", //rage
   "item.kingdomkeys.aristocracy": "Adel", //wild
   "item.kingdomkeys.autocracy": "Autokratie", //loaded
-  "item.kingdomkeys.conquest": "Eroberung", //chrono  
+  "item.kingdomkeys.conquest": "Eroberung", //chrono
   "item.kingdomkeys.despair": "Verzweiflung", //prestige
   "item.kingdomkeys.discipline": "Disziplin", //nimble
   "item.kingdomkeys.domination": "Herrschaft", //hazard
@@ -1699,7 +1701,7 @@
   "item.kingdomkeys.songbird": "Singvogel",
   "item.kingdomkeys.tune_up": "Plus",
   "item.kingdomkeys.up_to_eleven": "Auf Elf",
-  
+
 
   "item.kingdomkeys.prince_of_awesome": "Spitzenreiter", //casual
   "item.kingdomkeys.after_school": "Schulschluss", //mystery
@@ -1902,7 +1904,6 @@
   "item.kingdomkeys.bond_of_the_blaze.desc": "Das Schlüsselschwert, dass von Lea getragen wird.",
 
   "item.kingdomkeys.brightcrest.desc": "A Keyblade with long reach that provides an outstanding boost in Magic. It also makes it easier to land critical hits, and deals higher damage when you do.",
-  "item.kingdomkeys.chaos_ripper.desc": "A Keyblade with long reach that does little for your Magic, but provides an outstanding boost in Strength.",
 
 
   "item.kingdomkeys.crabclaw.desc": "Raises max MP by 1, and enhances magic and summon power. Also deals good physical damage.",
@@ -1943,7 +1944,6 @@
   "item.kingdomkeys.soul_eater.desc": "A sword that swims with darkness. Possesses high Strength.",
   "item.kingdomkeys.spellbinder.desc": "Raises max MP by 2, and significantly enhances magic and summon power.",
 
-  "item.kingdomkeys.stormfall.desc": "A well-balanced Keyblade that provides an extra boost to all your stats.",
   "item.kingdomkeys.sweet_dreams.desc": "A Keyblade with long reach that provides an extra boost in Strength and makes it easier to land critical hits.",
   "item.kingdomkeys.sweetstack.desc": "A Keyblade that provides an extra boost in Strength and ensures every strike is a critical hit.",
   "item.kingdomkeys.three_wishes.desc": "A powerful weapon that is difficult to deflect.",
@@ -2211,7 +2211,7 @@
   "savepoint.upgrade": "Die %s-Wiederherstellungsrate beträgt nun %s%%",
   "savepoint.upgrade_type": "Speicherpunkt wurde zum {0} aufgewertet",
 
-  "shotlock.ragnarok.name": "Ragnarök",
+  "shotlock.circular_shotlock.name": "Ragnarök",
   "shotlock.dark_volley.name": "Düsterhagel",
   "shotlock.prism_rain.name": "Prismaregen",
   "shotlock.sonic_shadow.name": "Schallschatten", //Terra BBS First
@@ -2267,8 +2267,6 @@
   "stats.levelUpMaxAccessories": "Accesoireplatz erhalten!",
   "stats.levelUpMaxArmors": "Ausrüstungsplatz erhalten!",
   "stats.levelUpStr": "Angriffskraft erhöht!",
-  "stats.levelNext": "Nächstes Level",
-  "stats.munnyGet": "Taler erhalten!",
 
   "patchouli.kingdomkeys.journal.desc": "Naminé danken.",
   "patchouli.kingdomkeys.journal.hello": "Willkommen, Schlüsselschwertträger zur $(thing)Kingdom Keys$() Mod.$(p)In diesem Buch wirst du alles Nötige finden um anzufangen, sowie einige hilfreiche Tipps.",

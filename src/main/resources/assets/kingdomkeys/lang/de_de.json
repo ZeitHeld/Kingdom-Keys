@@ -2588,32 +2588,34 @@
   "item.kingdomkeys.martial_waking": "Stunde des Kämpfers",
   "item.kingdomkeys.sorcerous_waking": "Stunde des Magiers",
   "item.kingdomkeys.stagnant_space": "Region der Stagnation",
-  "item.kingdomkeys.weightless_space": "Region der Schwerelosigkeit (?)",
+  "item.kingdomkeys.weightless_space": "Region der Schwerelosigkeit",
 
   //biome / dimension
 
   "item.kingdomkeys.empty_card": "Leere Karte",
 
-  "item.kingdomkeys.plains_card": "Grüne Ebene", //green plains
-  "item.kingdomkeys.forest_card": "Dichter Dickicht", //tense thicket
-  "item.kingdomkeys.jungle_card": "Dichter Urwald",
-  "item.kingdomkeys.desert_card": "Sandige Hitzen", //sandy heat
-  "item.kingdomkeys.snowy_card": "Gefrorene Gletscher",
-  "item.kingdomkeys.swamp_card": "Matschiger Sumpf",
+  "item.kingdomkeys.plains_card": "Ebene-Karte", //Grüne Ebene -> green plains
+  "item.kingdomkeys.forest_card": "Wald-Karte", //Dichter Dickicht -> tense thicket
+  "item.kingdomkeys.jungle_card": "Dschungel-Karte", //Dichter Urwald
+  "item.kingdomkeys.desert_card": "Wüste-Karte", //Sandige Hitzen -> sandy heat
+  "item.kingdomkeys.snowy_card": "Schnee-Karte", //Gefrorene Gletscher
+  "item.kingdomkeys.swamp_card": "Sumpf-Karte", //Matschiger Sumpf
   
-  "item.kingdomkeys.ocean_card": "Blaue Tiefen", //blue depths
+  "item.kingdomkeys.ocean_card": "Ozean-Karte", //Blaue Tiefen -> blue depths
   
-  "item.kingdomkeys.badlands_card": "Rotes Gebrige",
-  "item.kingdomkeys.mushroom_fields_card": "Myseriöses Myzelium Felder",
+  "item.kingdomkeys.badlands_card": "Tafelberg-Karte", //Rotes Gebrige
+  "item.kingdomkeys.mushroom_fields_card": "Pilzfelder-Karte", //Myseriöses Myzelium Felder
   
-  "item.kingdomkeys.cave_card": "Verwinkelte Höhlen",
+  "item.kingdomkeys.cave_card": "Höhle-Karte", //Verwinkelte Höhlen
   
-  "item.kingdomkeys.the_nether_card": "Goldene Schweine", //golden pigs ALT: Schweine Hitzen -> pig heat/warmth
-  "item.kingdomkeys.the_end_card": "Endliche Inseln Ebene", //pun - ENDlich = finite -> ending islands
+  "item.kingdomkeys.the_nether_card": "Der Nether-Karte", //Goldene Schweine:: -> golden pigs ALT: Schweine Hitzen -> pig heat/warmth
+  "item.kingdomkeys.the_end_card": "Das Ende-Karte", //Endliche Inseln Ebene:: pun - ENDlich = finite -> ending islands
 
-  "item.kingdomkeys.castle_oblivion_card": "Karte des Entfallens",
+  "item.kingdomkeys.castle_oblivion_card": "Schloss des Entfallens-Karte", //Karte des Entfallens
 
-  
+  //-memories
+  "item.kingdomkeys.desert_memory": "Erinnerung an die Wüste",
+  "item.kingdomkeys.plains_memory": "Erinnerung an die Ebene",
 
 
   // - MUSIC
@@ -2847,9 +2849,9 @@
   "room.mingling_worlds": "Kreuzung der Räume",
   "room.moments_reprieve": "Verschnaufpause",
   "room.moogle_room": "Mogry-Raum",
-  "room.prosperous_repository": "Wohlhabendes Lager (?)",
-  "room.reposeful_grove": "Friedlicher Hain (?)",
-  "room.treacherous_repository": "Hinterlistiges Lager (?)",
+  "room.prosperous_repository": "Wohlhabendes Lager",
+  "room.reposeful_grove": "Friedlicher Hain",
+  "room.treacherous_repository": "Hinterlistiges Lager",
 
   //-enemy
   "room.almighty_darkness": "Allmächtige Dunkelheit",
@@ -3061,9 +3063,6 @@
   "advancements.kingdomkeys.reach_castle_oblivion.desc": "Betrete das Schloss des Entfallens",
   "advancements.kingdomkeys.visit_moogle": "Ein Mogry kann weiterhelfen",
   "advancements.kingdomkeys.visit_moogle.desc": "Besuche einen Mogry",
-
-  "item.kingdomkeys.desert_memory": "Erinnerung an die Wüste",
-  "item.kingdomkeys.plains_memory": "Erinnerung an die Ebene",
 
 
 }

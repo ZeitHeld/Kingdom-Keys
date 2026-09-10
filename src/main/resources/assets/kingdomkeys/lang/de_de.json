@@ -869,7 +869,7 @@
   "effect.kingdomkeys.gravity": "Gravitas",
   "effect.kingdomkeys.gravity.desc": "Schränkt deine Bewegung ein, solange du geplättet bist.",
   "effect.kingdomkeys.ko": "KO",
-  "effect.kingdomkeys.ko.desc": "Erlaubt es einem deiner Teamkameraden dich mit Vita oder einer Potion zu retten.",
+  "effect.kingdomkeys.ko.desc": "Erlaubt es einem deiner Gruppenmitgliedern dich mit Vita oder einer Potion zu retten.",
   "effect.kingdomkeys.mini": "Wicht",
   "effect.kingdomkeys.mini.desc": "Schrumpft deinen ganzen Körper; vorsicht for anderen die auf die drauf springen!",
   "effect.kingdomkeys.stop": "Stopp",
@@ -2613,6 +2613,8 @@
 
   "item.kingdomkeys.castle_oblivion_card": "Karte des Entfallens",
 
+  
+
 
   // - MUSIC
   "item.kingdomkeys.disc_0": "Schallplatte",
@@ -2997,9 +2999,9 @@
   "warning.gummi.ship_too_big": "This Gummi Ship is too big",
   "warning.gummi.single_core": "Structure must contain a single core, currently has ",
   "warning.information": "INFORMATION",
-  "warning.party.disband": "'%s' will be disbanded for everyone in it. This can't be undone.",
-  "warning.party.kick": "%s will be removed from the party.",
-  "warning.party.leave": "You will leave '%s'.",
+  "warning.party.disband": "Die Gruppe '%s' wird für alle Mitglieder aufgelöst. Diese Aktion kann nicht rückgängig gemacht werden.",
+  "warning.party.kick": "%s wird von der Gruppe entfernt.",
+  "warning.party.leave": "Du verlässt die Gruppe '%s'.",
   "warning.sell": "You're about to sell x%s %s. Are you sure?",
   "warning.ship.overwrite": "'%s' already exists and will be replaced, are you sure?",
   "warning.stock.full": "Dein Inventar ist voll",
@@ -3049,16 +3051,19 @@
   "advancements.kingdomkeys.obtain_all_drive_forms.desc": "Obtain every Drive Form",
   "advancements.kingdomkeys.obtain_winner_stick": "Looks like my summer vacation is...",
   "advancements.kingdomkeys.obtain_winner_stick.desc": "Get a winner stick",
-  "advancements.kingdomkeys.open_menu": "Exploring the menu",
+  "advancements.kingdomkeys.open_menu": "Erkunde das Menü",
   "advancements.kingdomkeys.open_menu.desc": "Öffne das Kingdom Keys Menü",
   "advancements.kingdomkeys.play_music_disc": "Now Playing",
   "advancements.kingdomkeys.play_music_disc.desc": "Obtain one of the mod's music discs",
   "advancements.kingdomkeys.press_m_hint": "Drücke [M] um anzufangen",
   "advancements.kingdomkeys.press_m_hint.desc": "Es ist an der Zeit, eine Entscheidung zu treffen",
   "advancements.kingdomkeys.reach_castle_oblivion": "Naught but memories",
-  "advancements.kingdomkeys.reach_castle_oblivion.desc": "Set foot in Castle Oblivion",
+  "advancements.kingdomkeys.reach_castle_oblivion.desc": "Betrete das Schloss des Entfallens",
   "advancements.kingdomkeys.visit_moogle": "Ein Mogry kann weiterhelfen",
   "advancements.kingdomkeys.visit_moogle.desc": "Besuche einen Mogry",
+
+  "item.kingdomkeys.desert_memory": "Erinnerung an die Wüste",
+  "item.kingdomkeys.plains_memory": "Erinnerung an die Ebene",
 
 
 }

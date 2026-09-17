@@ -21,7 +21,7 @@ public class AlarmSoundInstance extends AbstractTickableSoundInstance {
    private float pitch = 0.0F;
   
    public AlarmSoundInstance(Player player) {
-      super(ModSounds.alarm.get(), SoundSource.PLAYERS, SoundInstance.createUnseededRandom());
+      super(ModSounds.alarm.get(), SoundSource.MASTER, SoundInstance.createUnseededRandom());
       this.player = player;
       this.looping = true;
       this.delay = 0;
